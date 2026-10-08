@@ -1,0 +1,79 @@
+<style>
+  #reel { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #0A3253; color: #FFFFFF; font-family: 'Poppins', sans-serif; }
+  .deco { position: absolute; }
+  .scene { position: absolute; left: 96px; right: 160px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; gap: 44px; }
+  .el { opacity: 0; will-change: transform, opacity; }
+  .pill { align-self: flex-start; border-radius: 999px; padding: 18px 40px; font-size: 40px; font-weight: 700; letter-spacing: 0.06em; }
+  .big { margin: 0; font-size: 96px; line-height: 1.08; font-weight: 700; letter-spacing: -0.02em; }
+  .mid { margin: 0; font-size: 64px; line-height: 1.15; font-weight: 600; }
+  .item { display: flex; align-items: center; gap: 32px; font-size: 58px; font-weight: 600; }
+  .check { flex-shrink: 0; width: 84px; height: 84px; border-radius: 50%; background: #8FD8FF; display: flex; align-items: center; justify-content: center; }
+  .nowrap { white-space: nowrap; }
+  .accent { color: #8FD8FF; }
+</style>
+<div id="reel">
+  <div class="deco" id="anneau" style="right:-170px; top:-170px; width:520px; height:520px; box-sizing:border-box; border:58px solid #126596; border-radius:50%"></div>
+  <div class="deco" id="point" style="right:330px; top:330px; width:54px; height:54px; border-radius:50%; background:#F6CA5E"></div>
+  <div class="deco" style="left:96px; bottom:300px; width:224px; height:168px; background-image:radial-gradient(circle, rgba(255,255,255,0.55) 3.5px, transparent 4.2px); background-size:32px 32px"></div>
+  <svg class="deco" id="arcs" width="620" height="620" viewBox="0 0 620 620" style="right:0; bottom:0">
+    <circle cx="620" cy="620" r="200" fill="none" stroke="#8FD8FF" stroke-width="4" opacity="0.45"/>
+    <circle cx="620" cy="620" r="265" fill="none" stroke="#8FD8FF" stroke-width="4" opacity="0.35"/>
+    <circle cx="620" cy="620" r="330" fill="none" stroke="#8FD8FF" stroke-width="4" opacity="0.25"/>
+    <circle cx="620" cy="620" r="395" fill="none" stroke="#8FD8FF" stroke-width="4" opacity="0.15"/>
+  </svg>
+
+  <img class="deco" src="/_blob/60ef6a97baee3fa31c8179d91d846c7d" alt="Formalaunch" style="left:96px; top:200px; width:260px; height:auto">
+
+  <div class="scene" id="s1">
+    <h1 class="el big" data-in="0.2" style="font-size:104px">Tu fais fonction d'<span class="nowrap accent">aide-soignante</span> depuis 5 ans&nbsp;?</h1>
+  </div>
+
+  <div class="scene" id="s2">
+    <p class="el mid" data-in="2.75" style="color:#E6F5FD">Ton quotidien :</p>
+    <div class="el item" data-in="3.05"><span class="check"><svg width="46" height="46" viewBox="0 0 44 44"><path d="M11 22.5 L19 30.5 L33 14.5" fill="none" stroke="#0A3253" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Les soins d'hygiène</div>
+    <div class="el item" data-in="3.5"><span class="check"><svg width="46" height="46" viewBox="0 0 44 44"><path d="M11 22.5 L19 30.5 L33 14.5" fill="none" stroke="#0A3253" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Les transmissions</div>
+    <div class="el item" data-in="3.95"><span class="check"><svg width="46" height="46" viewBox="0 0 44 44"><path d="M11 22.5 L19 30.5 L33 14.5" fill="none" stroke="#0A3253" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Le travail en équipe</div>
+  </div>
+
+  <div class="scene" id="s3">
+    <p class="el mid" data-in="5.75">Tu sais déjà tout faire.</p>
+    <p class="el mid" data-in="6.25" style="color:#E6F5FD">Il te manque juste…</p>
+    <h1 class="el big accent" data-in="6.75" style="font-size:132px">le diplôme.</h1>
+  </div>
+
+  <div class="scene" id="s4">
+    <h1 class="el big" data-in="8.0" style="font-size:84px">La <span class="accent">VAE</span> transforme ton expérience en <span class="accent">diplôme d'État</span>.</h1>
+    <div class="el pill" data-in="8.6" style="background:#F6CA5E; color:#0A3253; font-size:42px; padding:26px 46px; letter-spacing:0">Teste ton éligibilité · lien en bio</div>
+  </div>
+</div>
+<script>
+  window.DUREE = 11;
+  const scenes = [
+    { id: 's1', debut: 0, fin: 2.5 },
+    { id: 's2', debut: 2.6, fin: 5.5 },
+    { id: 's3', debut: 5.6, fin: 7.8 },
+    { id: 's4', debut: 7.9, fin: 99 },
+  ];
+  const clamp = (x) => Math.max(0, Math.min(1, x));
+  const sortie = (x) => 1 - Math.pow(1 - x, 3);
+  window.rendre = function (t) {
+    for (const s of scenes) {
+      const el = document.getElementById(s.id);
+      const disparition = clamp((t - (s.fin - 0.3)) / 0.3);
+      const visible = t >= s.debut - 0.01 && t <= s.fin + 0.01;
+      el.style.visibility = visible ? 'visible' : 'hidden';
+      el.style.opacity = 1 - disparition;
+      el.style.transform = `translateY(${-60 * sortie(disparition)}px)`;
+      for (const enfant of el.querySelectorAll('.el')) {
+        const p = sortie(clamp((t - parseFloat(enfant.dataset.in)) / 0.45));
+        enfant.style.opacity = p;
+        enfant.style.transform = `translateY(${(1 - p) * 70}px) scale(${0.96 + 0.04 * p})`;
+      }
+    }
+    const respire = Math.sin(t * 1.1);
+    document.getElementById('anneau').style.transform = `scale(${1 + 0.04 * respire}) rotate(${t * 6}deg)`;
+    document.getElementById('point').style.transform = `translate(${12 * Math.sin(t * 1.6)}px, ${10 * Math.cos(t * 1.3)}px)`;
+    document.getElementById('arcs').style.transform = `scale(${1 + 0.03 * Math.sin(t * 0.9 + 1)})`;
+  };
+  window.rendre(0);
+</script>
