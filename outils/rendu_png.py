@@ -91,7 +91,7 @@ def main():
             "Variables non renseignées : " + ", ".join(restantes)
             + " (ajouter par exemple fond=#005486 en argument)"
         )
-    page = Path(sortie).with_suffix(".rendu.html")
+    page = Path(sortie).resolve().with_suffix(".rendu.html")
     page.write_text(html, encoding="utf-8")
     with sync_playwright() as p:
         nav = p.chromium.launch()
