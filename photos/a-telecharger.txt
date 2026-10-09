@@ -1,1 +1,0 @@
-# Une ligne par photo : nom-du-fichier.jpg URL (le fichier est rempli puis vidé automatiquement)
