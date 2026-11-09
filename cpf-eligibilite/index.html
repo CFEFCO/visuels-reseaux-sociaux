@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bilan de compétences CPF à distance | CPF Éligibilité</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Bilan de compétences éligible CPF, 100 % à distance avec un consultant dédié. Faites le point, trouvez votre prochain métier et repartez avec un plan d'action. Éligibilité vérifiée en 30 secondes.">
+<link rel="canonical" href="https://cpf-eligibilite.fr/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://cpf-eligibilite.fr/">
+<meta property="og:title" content="Bilan de compétences financé par le CPF, 100 % à distance">
+<meta property="og:description" content="Faites le point avec un consultant dédié et repartez avec un projet professionnel clair. Organisme certifié Qualiopi.">
+<meta name="theme-color" content="#17205C">
+<link rel="icon" href="https://cpf-eligibilite.fr/wp-content/uploads/2024/09/cropped-icone-cpf-logo-1-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&display=swap">
+
+<!-- Google Ads / Google tag : coller ici le tag gtag.js (avec Consent Mode v2 + bandeau cookies). -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://cpf-eligibilite.fr/#organisation",
+      "name": "CPF Éligibilité",
+      "url": "https://cpf-eligibilite.fr/",
+      "description": "Centre de bilan de compétences certifié Qualiopi. Bilans 100 % à distance, éligibles au CPF."
+    },
+    {
+      "@type": "Service",
+      "name": "Bilan de compétences éligible CPF",
+      "serviceType": "Bilan de compétences",
+      "provider": { "@id": "https://cpf-eligibilite.fr/#organisation" },
+      "areaServed": "FR",
+      "availableChannel": { "@type": "ServiceChannel", "serviceUrl": "https://cpf-eligibilite.fr/" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Combien coûte un bilan de compétences avec le CPF ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Vos droits CPF prennent en charge le bilan dans la limite de 1 600 €. Il reste une participation forfaitaire obligatoire de 150 €, fixée par l'État, sauf si votre employeur complète le financement." } },
+        { "@type": "Question", "name": "Mon employeur sera-t-il au courant ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Non, si le bilan a lieu en dehors de votre temps de travail : vous n'avez pas besoin de son accord. Les résultats sont confidentiels et ne peuvent être communiqués à personne sans votre accord." } },
+        { "@type": "Question", "name": "Combien de temps dure un bilan de compétences ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Jusqu'à 24 heures d'accompagnement, réparties sur plusieurs semaines selon votre disponibilité." } },
+        { "@type": "Question", "name": "Allez-vous me demander mes identifiants CPF ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Jamais. Vous vous inscrivez vous-même sur moncompteformation.gouv.fr. Personne ne doit vous demander vos identifiants." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* Mise en page : une colonne éditoriale, un « itinéraire » (tracé en pointillés) comme fil conducteur, du hero au déroulé du bilan. */
+:root {
+  --ink: #17205C;        /* bleu nuit, continuité avec l'ancienne marque */
+  --ink-soft: #3B4478;
+  --paper: #F7F8FC;      /* fond, gris légèrement bleuté */
+  --card: #FFFFFF;
+  --line: #DCE0EF;
+  --muted: #5A6185;
+  --route: #2F45D8;      /* tracé de l'itinéraire, liens */
+  --marker: #FFD25A;     /* surligneur */
+  --cta: #D9432B;        /* bouton principal, reprend le rouge de l'ancien site */
+  --cta-ink: #FFFFFF;
+  --band: #17205C;       /* bandeaux pleins */
+  --band-ink: #F7F8FC;
+  --band-muted: #B9BFE0;
+  --ok: #1E8A5A;
+
+  --f-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --step--1: 0.875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.25rem;
+  --step-2: 1.6rem;
+  --step-3: clamp(1.9rem, 1.3rem + 2.4vw, 2.7rem);
+  --step-4: clamp(2.3rem, 1.4rem + 3.8vw, 3.9rem);
+
+  --radius: 14px;
+  --wrap: 1120px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #E9ECFA; --ink-soft: #C3C8E6; --paper: #0E1333; --card: #161C45; --line: #2A3266;
+    --muted: #A2A8CE; --route: #8C9BFF; --marker: #C99A1E; --cta: #F0614A; --cta-ink: #FFFFFF;
+    --band: #1B2257; --band-ink: #F2F3FB; --band-muted: #AEB4DA; --ok: #4CC48D;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ink: #E9ECFA; --ink-soft: #C3C8E6; --paper: #0E1333; --card: #161C45; --line: #2A3266;
+  --muted: #A2A8CE; --route: #8C9BFF; --marker: #C99A1E; --cta: #F0614A; --cta-ink: #FFFFFF;
+  --band: #1B2257; --band-ink: #F2F3FB; --band-muted: #AEB4DA; --ok: #4CC48D;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: var(--step-0);
+  line-height: 1.6;
+}
+img, svg { max-width: 100%; }
+a { color: var(--route); }
+h1, h2, h3 { font-family: var(--f-display); line-height: 1.08; margin: 0; text-wrap: balance; letter-spacing: -0.015em; }
+h2 { font-size: var(--step-3); font-weight: 800; }
+h3 { font-size: var(--step-1); font-weight: 700; letter-spacing: 0; line-height: 1.25; }
+p { margin: 0; }
+:focus-visible { outline: 3px solid var(--route); outline-offset: 3px; border-radius: 6px; }
+
+.wrap {
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.section { padding-block: clamp(56px, 8vw, 104px); }
+.section-head { display: grid; gap: 14px; max-width: 46rem; margin-bottom: clamp(28px, 4vw, 48px); }
+.eyebrow {
+  font-size: var(--step--1); font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em;
+  color: var(--route);
+}
+.lead { font-size: var(--step-1); color: var(--ink-soft); line-height: 1.5; max-width: 40rem; }
+.mark {
+  background: linear-gradient(transparent 58%, var(--marker) 58%, var(--marker) 92%, transparent 92%);
+  padding-inline: 0.08em;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+
+/* Boutons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font: 700 1.0625rem/1 var(--f-body);
+  text-decoration: none; border-radius: 999px; padding: 18px 28px;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+.btn-cta { background: var(--cta); color: var(--cta-ink); box-shadow: 0 6px 0 -1px color-mix(in srgb, var(--cta) 55%, #000); }
+.btn-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 0 -1px color-mix(in srgb, var(--cta) 55%, #000); }
+.btn-cta:active { transform: translateY(2px); box-shadow: 0 2px 0 -1px color-mix(in srgb, var(--cta) 55%, #000); }
+.btn-cta svg { width: 18px; height: 18px; flex: none; }
+.btn-ghost { color: var(--ink); border: 2px solid var(--line); background: transparent; }
+.btn-ghost:hover { border-color: var(--ink); }
+.cta-note { font-size: var(--step--1); color: var(--muted); }
+
+/* En-tête */
+.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 21; background: var(--paper); }
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font: 800 1.2rem/1 var(--f-display); letter-spacing: -0.02em; }
+.brand svg { width: 32px; height: 32px; flex: none; }
+.brand small { display: block; font: 600 0.72rem/1.2 var(--f-body); color: var(--muted); letter-spacing: 0.02em; margin-top: 3px; }
+.topbar .btn { padding: 12px 20px; font-size: 0.95rem; }
+.topbar .badge-q { display: none; }
+@media (min-width: 760px) { .topbar .badge-q { display: inline-flex; } }
+@media (max-width: 520px) { .topbar .btn { display: none; } }
+
+.badge-q { display: inline-flex; align-items: center; gap: 8px; font-size: var(--step--1); font-weight: 700; color: var(--ink-soft); }
+.badge-q svg { width: 20px; height: 20px; color: var(--ok); flex: none; }
+
+/* Hero */
+.hero { padding-block: clamp(36px, 6vw, 80px) clamp(48px, 7vw, 96px); }
+.hero .wrap { display: grid; gap: clamp(32px, 5vw, 64px); align-items: center; }
+@media (min-width: 940px) { .hero .wrap { grid-template-columns: 1.08fr 0.92fr; } }
+.hero-copy { display: grid; gap: 22px; min-width: 0; }
+.hero h1 { font-size: var(--step-4); font-weight: 800; letter-spacing: -0.03em; }
+.hero .lead { font-size: clamp(1.1rem, 1rem + 0.5vw, 1.3rem); }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; }
+.proof { display: flex; flex-wrap: wrap; gap: 10px 24px; padding-top: 6px; }
+.proof li { display: flex; align-items: center; gap: 8px; font-size: var(--step--1); font-weight: 600; color: var(--ink-soft); }
+.proof svg { width: 18px; height: 18px; flex: none; color: var(--ok); }
+.stars { color: #E9A100; letter-spacing: 1px; }
+ul.plain { list-style: none; margin: 0; padding: 0; }
+
+/* Carte itinéraire */
+.route-card { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: clamp(18px, 3vw, 28px); box-shadow: 0 30px 60px -40px rgba(23, 32, 92, .45); min-width: 0; }
+.route-card header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 4px; }
+.route-card header strong { font: 700 var(--step-1)/1.2 var(--f-display); }
+.route-card header span { font-size: var(--step--1); color: var(--muted); font-weight: 600; }
+.route-svg { display: block; width: 100%; height: auto; margin-block: 6px 10px; }
+.route-svg .grid { stroke: var(--line); stroke-width: 1; }
+.route-svg .path-bg { fill: none; stroke: var(--line); stroke-width: 10; stroke-linecap: round; }
+.route-svg .path { fill: none; stroke: var(--route); stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 2 9; }
+.route-svg .stop { fill: var(--card); stroke: var(--route); stroke-width: 3; }
+.route-svg .stop-num { fill: var(--route); font: 800 12px var(--f-body); }
+.route-svg .lbl { fill: var(--ink); font: 700 13px var(--f-body); }
+.route-svg .lbl-sub { fill: var(--muted); font: 600 11px var(--f-body); }
+.route-svg .start { fill: var(--ink); }
+.route-svg .flag { fill: var(--cta); }
+.route-svg .flag-pole { stroke: var(--ink); stroke-width: 2.5; stroke-linecap: round; }
+@media (prefers-reduced-motion: no-preference) {
+  .route-svg .path { animation: march 1.4s linear infinite; }
+  @keyframes march { to { stroke-dashoffset: -22; } }
+}
+.legs { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.legs li { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: baseline; padding-block: 10px; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+.legs b { font-family: var(--f-display); color: var(--route); }
+.legs em { font-style: normal; color: var(--muted); font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowrap; }
+.fin-line { display: flex; gap: 10px; align-items: flex-start; margin-top: 14px; font-size: 0.92rem; color: var(--ink-soft); }
+.fin-line svg { width: 20px; height: 20px; flex: none; color: var(--route); margin-top: 2px; }
+
+/* Situations */
+.situations { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.situations li { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; font-size: 1.05rem; font-weight: 600; line-height: 1.45; display: flex; gap: 14px; align-items: flex-start; }
+.situations li::before { content: ""; flex: none; width: 10px; height: 10px; margin-top: 8px; border-radius: 50%; border: 2.5px solid var(--route); }
+.answer { margin-top: clamp(28px, 4vw, 40px); display: grid; gap: 18px; max-width: 46rem; }
+.answer p { font-size: var(--step-1); line-height: 1.5; }
+
+/* Ce que vous obtenez */
+.band { background: var(--band); color: var(--band-ink); }
+.band .eyebrow { color: var(--marker); }
+.band .lead { color: var(--band-muted); }
+.outcomes { display: grid; gap: 1px; background: color-mix(in srgb, var(--band-ink) 18%, transparent); border-radius: var(--radius); overflow: hidden; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); }
+.outcomes li { background: var(--band); padding: 26px 24px; display: grid; gap: 10px; align-content: start; }
+.outcomes svg { width: 30px; height: 30px; color: var(--marker); }
+.outcomes p { color: var(--band-muted); font-size: 0.98rem; }
+
+/* Déroulé */
+.timeline { display: grid; gap: 0; position: relative; }
+.phase { display: grid; grid-template-columns: 56px 1fr; gap: 0 20px; position: relative; padding-bottom: 36px; }
+.phase:last-child { padding-bottom: 0; }
+.phase::before { content: ""; position: absolute; left: 27px; top: 56px; bottom: 0; border-left: 3px dotted var(--route); }
+.phase:last-child::before { display: none; }
+.phase-num { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: var(--card); border: 3px solid var(--route); color: var(--route); font: 800 1.35rem/1 var(--f-display); }
+.phase-body { display: grid; gap: 10px; padding-top: 8px; min-width: 0; }
+.phase-body h3 { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; font-size: var(--step-2); }
+.phase-body h3 span { font: 700 var(--step--1)/1 var(--f-body); color: var(--muted); background: var(--card); border: 1px solid var(--line); padding: 6px 10px; border-radius: 999px; font-variant-numeric: tabular-nums; }
+.phase-body ul { margin: 4px 0 0; padding-left: 1.1em; display: grid; gap: 4px; color: var(--ink-soft); }
+.phase.follow .phase-num { border-style: dashed; font-size: 1rem; }
+.format { margin-top: clamp(32px, 4vw, 48px); display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); }
+.format li { display: grid; gap: 4px; padding: 18px 20px; border-left: 3px solid var(--marker); background: var(--card); border-radius: 0 var(--radius) var(--radius) 0; }
+.format strong { font-family: var(--f-display); font-size: 1.08rem; }
+.format span { color: var(--muted); font-size: 0.95rem; }
+
+/* Financement */
+.fin-grid { display: grid; gap: clamp(28px, 4vw, 56px); align-items: start; }
+@media (min-width: 900px) { .fin-grid { grid-template-columns: 1fr 1fr; } }
+.steps { counter-reset: s; display: grid; gap: 18px; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: start; }
+.steps li::before { content: counter(s); width: 40px; height: 40px; border-radius: 12px; background: var(--ink); color: var(--paper); display: grid; place-items: center; font: 800 1.1rem/1 var(--f-display); }
+.steps strong { display: block; font-size: 1.08rem; margin-bottom: 2px; }
+.steps p { color: var(--ink-soft); font-size: 0.98rem; }
+.receipt { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: clamp(20px, 3vw, 30px); display: grid; gap: 16px; min-width: 0; }
+.receipt h3 { font-size: var(--step-2); }
+.receipt dl { margin: 0; display: grid; }
+.receipt .row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 16px; padding-block: 14px; border-bottom: 1px dashed var(--line); }
+.receipt dt { color: var(--ink-soft); min-width: 0; }
+.receipt dd { margin: 0; font: 800 1.15rem/1.2 var(--f-display); font-variant-numeric: tabular-nums; text-align: right; }
+.receipt dd.txt { font: 700 0.98rem/1.35 var(--f-body); }
+.receipt .row.total { border-bottom: 0; }
+.receipt .row.total dt { color: var(--ink); font-weight: 700; }
+.receipt .row.total dd { font-size: 2rem; color: var(--cta); }
+.receipt small { color: var(--muted); font-size: 0.82rem; line-height: 1.5; display: block; }
+.callout { display: flex; gap: 14px; padding: 16px 18px; border-radius: var(--radius); background: color-mix(in srgb, var(--marker) 22%, var(--card)); border: 1px solid color-mix(in srgb, var(--marker) 55%, var(--line)); font-size: 0.97rem; }
+.callout svg { width: 22px; height: 22px; flex: none; margin-top: 2px; }
+
+/* Pourquoi nous */
+.why { display: grid; gap: 28px 36px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+.why li { display: grid; gap: 8px; align-content: start; }
+.why .big { font: 800 2.4rem/1 var(--f-display); letter-spacing: -0.03em; color: var(--route); font-variant-numeric: tabular-nums; }
+.why p { color: var(--ink-soft); font-size: 0.98rem; }
+
+/* Témoignages */
+.quotes { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.quote { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 26px 24px; display: grid; gap: 16px; align-content: space-between; margin: 0; }
+.quote blockquote { margin: 0; font-size: 1rem; line-height: 1.6; color: var(--ink-soft); }
+.quote blockquote::before { content: "“"; display: block; font: 800 3.4rem/0.6 var(--f-display); color: var(--marker); margin-bottom: 8px; }
+.quote figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; font-weight: 700; }
+.quote figcaption span { font-weight: 600; font-size: var(--step--1); color: var(--muted); }
+
+/* FAQ */
+.faq { display: grid; gap: 10px; max-width: 52rem; }
+.faq details { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); }
+.faq summary { cursor: pointer; list-style: none; padding: 18px 54px 18px 20px; font-weight: 700; font-size: 1.05rem; position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font: 700 1.5rem/1 var(--f-display); color: var(--route); transition: transform .2s; }
+.faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.faq .a { padding: 0 20px 20px; color: var(--ink-soft); display: grid; gap: 10px; }
+
+/* CTA final */
+.final { text-align: left; }
+.final .wrap { display: grid; gap: 22px; justify-items: start; }
+.final h2 { font-size: var(--step-4); max-width: 18ch; }
+
+/* Pied de page */
+footer { border-top: 1px solid var(--line); padding-block: 40px calc(40px + env(safe-area-inset-bottom, 0px)); font-size: 0.88rem; color: var(--muted); }
+footer .wrap { display: grid; gap: 18px; }
+footer .cols { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+footer strong { color: var(--ink); }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+footer a { color: var(--ink-soft); }
+.todo { background: color-mix(in srgb, var(--marker) 40%, transparent); color: var(--ink); padding: 0 4px; border-radius: 4px; font-weight: 700; }
+
+/* Barre d'action mobile */
+.mobile-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; display: none; background: var(--card); border-top: 1px solid var(--line); box-shadow: 0 -10px 30px -20px rgba(0,0,0,.4);
+  padding: 10px max(16px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.mobile-cta .btn { width: 100%; padding: 16px; }
+@media (max-width: 760px) {
+  .mobile-cta { display: block; }
+  footer { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="CPF Éligibilité, accueil">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M21.5 10.5 18 18l-7.5 3.5L14 14z" fill="#D9432B"/>
+        <circle cx="16" cy="16" r="1.8" fill="currentColor"/>
+      </svg>
+      <span>CPF Éligibilité<small>Centre de bilan de compétences</small></span>
+    </a>
+    <span class="badge-q">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+      Organisme certifié Qualiopi
+    </span>
+    <a class="btn btn-cta" href="https://ctiolga40oz.typeform.com/to/ddrc4j8A" data-cta="header">Vérifier mon éligibilité</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Bilan de compétences · éligible CPF · 100&nbsp;% à distance</p>
+        <h1>Changer de métier, oui. Le bilan de compétences vous aide à <span class="mark">savoir pour lequel</span>.</h1>
+        <p class="lead">Avec un consultant dédié, vous faites le point sur ce que vous savez faire et ce qui compte pour vous. Vous repartez avec un projet professionnel réaliste et un plan d'action concret, financé par votre CPF.</p>
+        <div class="hero-actions">
+          <a class="btn btn-cta" href="https://ctiolga40oz.typeform.com/to/ddrc4j8A" data-cta="hero">
+            Vérifier mon éligibilité
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#deroule">Voir le déroulé</a>
+        </div>
+        <p class="cta-note">30 secondes, sans engagement. Un conseiller vous rappelle pour répondre à vos questions.</p>
+        <ul class="plain proof">
+          <li><span class="stars" aria-hidden="true">★★★★★</span> 4,82/5 · plus de 10&nbsp;000 personnes accompagnées</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"/></svg> Certifié Qualiopi</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"/></svg> Confidentiel vis-à-vis de votre employeur</li>
+        </ul>
+      </div>
+
+      <aside class="route-card" aria-label="Les trois phases du bilan de compétences">
+        <header><strong>Votre itinéraire</strong><span>jusqu'à 24&nbsp;h d'accompagnement</span></header>
+        <svg class="route-svg" viewBox="0 0 420 280" role="img" aria-labelledby="route-title">
+          <title id="route-title">Tracé allant d'aujourd'hui à votre projet professionnel, en trois étapes&nbsp;: faire le point, explorer, décider.</title>
+          <g class="grid">
+            <line x1="0" y1="70" x2="420" y2="70"/><line x1="0" y1="140" x2="420" y2="140"/><line x1="0" y1="210" x2="420" y2="210"/>
+            <line x1="105" y1="0" x2="105" y2="280"/><line x1="210" y1="0" x2="210" y2="280"/><line x1="315" y1="0" x2="315" y2="280"/>
+          </g>
+          <path class="path-bg" d="M40 245 C 85 245, 95 200, 135 192 C 180 183, 200 160, 238 142 C 274 125, 272 92, 304 80 C 330 70, 345 48, 372 44"/>
+          <path class="path" d="M40 245 C 85 245, 95 200, 135 192 C 180 183, 200 160, 238 142 C 274 125, 272 92, 304 80 C 330 70, 345 48, 372 44"/>
+          <circle class="start" cx="40" cy="245" r="7"/>
+          <text class="lbl" x="22" y="272">Aujourd'hui</text>
+
+          <circle class="stop" cx="135" cy="192" r="13"/><text class="stop-num" x="135" y="196.5" text-anchor="middle">1</text>
+          <text class="lbl" x="152" y="216">Faire le point</text>
+
+          <circle class="stop" cx="238" cy="142" r="13"/><text class="stop-num" x="238" y="146.5" text-anchor="middle">2</text>
+          <text class="lbl" x="256" y="166">Explorer</text>
+
+          <circle class="stop" cx="304" cy="80" r="13"/><text class="stop-num" x="304" y="84.5" text-anchor="middle">3</text>
+          <text class="lbl" x="214" y="84">Décider</text>
+
+          <line class="flag-pole" x1="372" y1="46" x2="372" y2="8"/>
+          <path class="flag" d="M372 8 h34 l-8 9 8 9 h-34z"/>
+          <text class="lbl" x="362" y="20" text-anchor="end">Votre projet</text>
+          <text class="lbl-sub" x="362" y="35" text-anchor="end">+ plan d'action</text>
+        </svg>
+        <ol class="plain legs">
+          <li><b>1</b><span>Phase préliminaire&nbsp;: vos attentes, vos questions</span><em>≈&nbsp;3&nbsp;h</em></li>
+          <li><b>2</b><span>Phase d'investigation&nbsp;: compétences, valeurs, pistes métiers</span><em>≈&nbsp;18&nbsp;h</em></li>
+          <li><b>3</b><span>Phase de conclusion&nbsp;: projet, plan d'action, synthèse</span><em>≈&nbsp;3&nbsp;h</em></li>
+        </ol>
+        <p class="fin-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg>
+          <span>Financé par vos droits CPF. Il reste <strong>150 €</strong> de participation fixée par l'État.</span>
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- SITUATIONS -->
+  <section class="section" id="pour-qui" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Pour qui&nbsp;?</p>
+        <h2>Vous vous reconnaissez dans l'une de ces situations&nbsp;?</h2>
+      </div>
+      <ul class="plain situations">
+        <li>Le dimanche soir, vous pensez déjà au lundi matin.</li>
+        <li>Vous faites bien votre travail, mais il n'a plus de sens pour vous.</li>
+        <li>Vous avez une idée de reconversion et vous ne savez pas si elle est réaliste.</li>
+        <li>Vous voulez évoluer, sans savoir vers quoi ni ce que vous valez sur le marché.</li>
+        <li>Vous sortez d'un burn-out, d'un licenciement ou d'un long congé et vous voulez repartir sur de bonnes bases.</li>
+        <li>Vous avez envie de tout changer et peur de vous tromper.</li>
+      </ul>
+      <div class="answer">
+        <p>Le bilan de compétences sert précisément à ça&nbsp;: prendre du recul avec un professionnel de l'orientation, pour décider en connaissance de cause plutôt que sur un coup de tête.</p>
+        <div><a class="btn btn-cta" href="https://ctiolga40oz.typeform.com/to/ddrc4j8A" data-cta="situations">Vérifier mon éligibilité</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CE QUE VOUS OBTENEZ -->
+  <section class="section band" id="resultats">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">À la fin du bilan</p>
+        <h2>Vous repartez avec un projet clair, et la marche à suivre.</h2>
+        <p class="lead">Un bilan réussi ne se résume pas à une liste de qualités. Il débouche sur une décision que vous pouvez défendre et mettre en œuvre.</p>
+      </div>
+      <ul class="plain outcomes">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+          <h3>Un projet professionnel validé</h3>
+          <p>Confronté à la réalité&nbsp;: enquêtes métiers, échanges avec des professionnels, débouchés et salaires de votre région.</p>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/><path d="m15 17 2 2 4-4"/></svg>
+          <h3>Un plan d'action daté</h3>
+          <p>Formation, VAE, candidatures, création d'entreprise&nbsp;: les étapes concrètes, dans l'ordre, avec les financements possibles.</p>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5z"/><path d="m3 13 9 5 9-5"/></svg>
+          <h3>Vos compétences transférables</h3>
+          <p>Ce que vous savez faire et que vous pouvez emporter dans un autre métier, souvent bien plus que vous ne le pensez.</p>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg>
+          <h3>Un document de synthèse</h3>
+          <p>Il vous est remis à vous seul. Personne d'autre, ni votre employeur ni un financeur, ne peut le recevoir sans votre accord.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- DÉROULÉ -->
+  <section class="section" id="deroule">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Comment ça se passe</p>
+        <h2>Trois phases, prévues par le Code du travail</h2>
+        <p class="lead">Jusqu'à 24&nbsp;heures d'accompagnement, réparties sur plusieurs semaines. Vous avancez à votre rythme, entre les rendez-vous avec votre consultant et un travail personnel guidé.</p>
+      </div>
+      <ol class="plain timeline">
+        <li class="phase">
+          <div class="phase-num" aria-hidden="true">1</div>
+          <div class="phase-body">
+            <h3>Phase préliminaire <span>≈&nbsp;3&nbsp;h</span></h3>
+            <p>On part de votre situation et de vos questions. Ensemble, vous fixez les objectifs du bilan et la façon d'y arriver.</p>
+          </div>
+        </li>
+        <li class="phase">
+          <div class="phase-num" aria-hidden="true">2</div>
+          <div class="phase-body">
+            <h3>Phase d'investigation <span>≈&nbsp;18&nbsp;h</span></h3>
+            <p>Le cœur du bilan. Vous explorez qui vous êtes au travail et ce qui est possible pour vous.</p>
+            <ul>
+              <li>vos compétences, vos valeurs, vos motivations et vos centres d'intérêt</li>
+              <li>des tests d'orientation et de personnalité, commentés avec votre consultant</li>
+              <li>des pistes métiers, vérifiées par des enquêtes et des rencontres sur le terrain</li>
+              <li>la faisabilité&nbsp;: formation nécessaire, salaire, débouchés, contraintes</li>
+            </ul>
+          </div>
+        </li>
+        <li class="phase">
+          <div class="phase-num" aria-hidden="true">3</div>
+          <div class="phase-body">
+            <h3>Phase de conclusion <span>≈&nbsp;3&nbsp;h</span></h3>
+            <p>Vous arrêtez votre projet, construisez le plan d'action et recevez votre document de synthèse.</p>
+          </div>
+        </li>
+        <li class="phase follow">
+          <div class="phase-num" aria-hidden="true">+6 m</div>
+          <div class="phase-body">
+            <h3>Entretien de suivi</h3>
+            <p>Six mois plus tard, on refait le point avec vous&nbsp;: ce qui avance, ce qui coince, les ajustements à prévoir.</p>
+          </div>
+        </li>
+      </ol>
+      <ul class="plain format">
+        <li><strong>100&nbsp;% à distance</strong><span>Rendez-vous en visio, où que vous soyez en France.</span></li>
+        <li><strong>Un seul consultant</strong><span>La même personne vous suit du premier au dernier rendez-vous.</span></li>
+        <li><strong>À votre rythme</strong><span>Les séances se calent sur votre agenda, y compris si vous travaillez.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FINANCEMENT -->
+  <section class="section" id="financement" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Financement CPF</p>
+        <h2>Ce que vous payez vraiment, et comment vous inscrire</h2>
+      </div>
+      <div class="fin-grid">
+        <ol class="plain steps">
+          <li><div><strong>Vous vérifiez votre éligibilité</strong><p>Quelques questions en 30 secondes. Vous indiquez quand vous souhaitez être rappelé(e).</p></div></li>
+          <li><div><strong>Un conseiller vous appelle</strong><p>Il vérifie avec vous que le bilan répond à votre besoin et répond à toutes vos questions. Vous n'êtes engagé(e) à rien.</p></div></li>
+          <li><div><strong>Vous vous inscrivez vous-même sur Mon Compte Formation</strong><p>Sur moncompteformation.gouv.fr ou l'application, avec votre identité numérique. Personne ne doit vous demander vos identifiants, et nous ne le ferons jamais.</p></div></li>
+          <li><div><strong>Votre bilan démarre</strong><p>Au plus tôt 11 jours ouvrés après votre inscription, comme le prévoit la plateforme. Votre consultant vous contacte pour le premier rendez-vous.</p></div></li>
+        </ol>
+
+        <div class="receipt">
+          <h3>Le financement en clair</h3>
+          <dl>
+            <div class="row"><dt>Pris en charge par vos droits CPF</dt><dd>jusqu'à 1&nbsp;600&nbsp;€</dd></div>
+            <div class="row"><dt>Si vos droits ne suffisent pas</dt><dd class="txt">employeur, France Travail ou vous</dd></div>
+            <div class="row total"><dt>Votre participation obligatoire, fixée par l'État</dt><dd>150&nbsp;€</dd></div>
+          </dl>
+          <small>Participation forfaitaire obligatoire de 150 € depuis le 2 avril 2026 (décret n° 2026-234), réglée sur Mon Compte Formation lors de l'inscription. Elle ne s'applique pas si votre employeur complète le financement. Le bilan de compétences n'est pas concerné par la majoration annoncée dans le projet de loi de finances 2027. Plafond CPF du bilan de compétences&nbsp;: 1 600 € depuis le 26 février 2026.</small>
+          <div class="callout">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            <p><strong>Votre employeur n'a pas à être prévenu</strong> si le bilan se déroule en dehors de vos heures de travail. Les résultats restent confidentiels.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POURQUOI NOUS -->
+  <section class="section band" id="pourquoi">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Pourquoi nous faire confiance</p>
+        <h2>Un accompagnement sérieux, contrôlé et apprécié</h2>
+      </div>
+      <ul class="plain why">
+        <li><span class="big" style="color:var(--marker)">4,82/5</span><h3>Note moyenne</h3><p style="color:var(--band-muted)">Donnée par les personnes que nous avons accompagnées.</p></li>
+        <li><span class="big" style="color:var(--marker)">10&nbsp;000+</span><h3>Bénéficiaires</h3><p style="color:var(--band-muted)">Salariés, demandeurs d'emploi, indépendants&nbsp;: tous les profils, partout en France.</p></li>
+        <li><span class="big" style="color:var(--marker)">Qualiopi</span><h3>Certification qualité</h3><p style="color:var(--band-muted)">Délivrée au titre des bilans de compétences et des actions de formation, et contrôlée régulièrement.</p></li>
+        <li><span class="big" style="color:var(--marker)">1</span><h3>Consultant dédié</h3><p style="color:var(--band-muted)">Formé à l'orientation et à l'accompagnement des reconversions.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TÉMOIGNAGES -->
+  <section class="section" id="avis">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Avis</p>
+        <h2>Ils ont fait leur bilan avec nous</h2>
+      </div>
+      <div class="quotes">
+        <figure class="quote">
+          <blockquote>J'ai vécu une période très enrichissante, notamment grâce à ma formatrice, d'une grande patience. Cette expérience m'a permis de mieux cerner mes compétences et d'envisager plus sereinement mon futur métier. L'ensemble de l'équipe a fait preuve d'un grand professionnalisme et d'une bienveillance constante. Je recommande sans hésiter, vous pouvez y aller les yeux fermés.</blockquote>
+          <figcaption>Christine R.<span>mars 2025</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>Mon expérience a été excellente. L'équipe encadre les apprenants avec sérieux, de la première étape jusqu'à la fin du bilan de compétences, avec une grande réactivité. Un immense merci à Pierre, mon formateur, pour ses conseils avisés, son écoute bienveillante et sa bonne humeur constante. Chaque session avec lui a été un réel plaisir&nbsp;!</blockquote>
+          <figcaption>Stéphanie J.<span>février 2025</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>Après avoir évalué mes compétences, j'ai été agréablement étonné par l'accueil et l'efficacité de cette formation. J'ai tiré énormément d'enseignements de leurs expériences partagées. Cela me conforte énormément dans mes projets, à la fois personnels et professionnels. Je recommande vivement à ceux qui cherchent des réponses.</blockquote>
+          <figcaption>Benjamin S.<span>janvier 2025</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2>Ce qu'on nous demande le plus souvent</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Qu'est-ce qu'un bilan de compétences, exactement&nbsp;?</summary>
+          <div class="a"><p>C'est un accompagnement individuel, encadré par le Code du travail, qui vous permet d'analyser vos compétences, vos aptitudes et vos motivations afin de définir un projet professionnel, et si besoin un projet de formation. Il est mené par un consultant spécialisé et se termine par un document de synthèse qui vous appartient.</p></div>
+        </details>
+        <details>
+          <summary>Combien coûte un bilan de compétences avec le CPF&nbsp;?</summary>
+          <div class="a"><p>Vos droits CPF prennent en charge le bilan dans la limite de 1 600 €. Il reste une participation forfaitaire obligatoire de 150 €, fixée par l'État et réglée sur Mon Compte Formation. Elle ne s'applique pas si votre employeur complète le financement.</p><p>Si vos droits sont insuffisants, le complément peut venir de votre employeur, de France Travail ou de vous-même. Le conseiller fait le calcul avec vous avant toute inscription.</p></div>
+        </details>
+        <details>
+          <summary>Mon employeur sera-t-il au courant&nbsp;?</summary>
+          <div class="a"><p>Pas si le bilan a lieu en dehors de votre temps de travail&nbsp;: vous n'avez alors besoin ni de son accord ni de le prévenir. Les résultats sont confidentiels et ne peuvent être transmis à personne sans votre accord écrit.</p></div>
+        </details>
+        <details>
+          <summary>Combien de temps dure le bilan&nbsp;?</summary>
+          <div class="a"><p>Jusqu'à 24&nbsp;heures d'accompagnement, en général réparties sur deux à trois mois. Le rythme s'adapte à vos disponibilités.</p></div>
+        </details>
+        <details>
+          <summary>Tout se fait-il vraiment à distance&nbsp;?</summary>
+          <div class="a"><p>Oui. Les rendez-vous ont lieu en visio avec votre consultant et le travail personnel se fait en ligne. Il vous suffit d'un ordinateur ou d'une tablette et d'une connexion internet.</p></div>
+        </details>
+        <details>
+          <summary>Je suis demandeur d'emploi, puis-je faire un bilan avec mon CPF&nbsp;?</summary>
+          <div class="a"><p>Oui. Vos droits CPF restent acquis quand vous êtes au chômage. La participation de 150 € s'applique aussi aux demandeurs d'emploi pour un bilan de compétences.</p></div>
+        </details>
+        <details>
+          <summary>Comment connaître le montant de mes droits CPF&nbsp;?</summary>
+          <div class="a"><p>Connectez-vous sur moncompteformation.gouv.fr ou sur l'application Mon Compte Formation&nbsp;: le montant disponible s'affiche dès l'accueil. Le conseiller peut aussi vous guider pendant l'appel, sans jamais vous demander vos identifiants.</p></div>
+        </details>
+        <details>
+          <summary>Allez-vous me demander mes identifiants CPF&nbsp;?</summary>
+          <div class="a"><p>Jamais. Vous vous inscrivez vous-même sur la plateforme officielle. Si quelqu'un vous demande vos identifiants ou vous propose un cadeau en échange d'une inscription, c'est une arnaque&nbsp;: signalez-la sur moncompteformation.gouv.fr.</p></div>
+        </details>
+        <details>
+          <summary>Et après le bilan&nbsp;?</summary>
+          <div class="a"><p>Vous repartez avec un plan d'action. Si votre projet passe par une formation ou une VAE, nous vous orientons vers les bons interlocuteurs et les financements possibles. Un entretien de suivi est prévu six mois plus tard.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section band final">
+    <div class="wrap">
+      <p class="eyebrow">Premier pas</p>
+      <h2>Votre prochain métier commence par une question.</h2>
+      <p class="lead">Vérifiez en 30 secondes si vous pouvez financer votre bilan avec votre CPF. Un conseiller vous rappelle, sans engagement.</p>
+      <a class="btn btn-cta" href="https://ctiolga40oz.typeform.com/to/ddrc4j8A" data-cta="final">
+        Vérifier mon éligibilité
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <p><strong>CPF Éligibilité</strong>, centre de bilan de compétences.</p>
+        <p>Édité par <span class="todo">[raison sociale]</span>, <span class="todo">[adresse]</span>. SIRET <span class="todo">[n°]</span>.</p>
+        <p>Déclaration d'activité enregistrée sous le n° <span class="todo">[NDA]</span> auprès du préfet de région <span class="todo">[région]</span>. Cet enregistrement ne vaut pas agrément de l'État.</p>
+      </div>
+      <div>
+        <p>La certification qualité a été délivrée au titre des catégories d'actions suivantes&nbsp;: actions de formation, bilans de compétences.</p>
+        <p>CPF Éligibilité est un organisme privé. Ce site n'est pas affilié à Mon Compte Formation, à la Caisse des Dépôts ni à l'État.</p>
+      </div>
+    </div>
+    <nav aria-label="Informations légales">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="mentions-legales.html#confidentialite">Confidentialité</a>
+      <a href="mentions-legales.html#cgv">Conditions générales</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="mobile-cta">
+  <a class="btn btn-cta" href="https://ctiolga40oz.typeform.com/to/ddrc4j8A" data-cta="mobile-bar">Vérifier mon éligibilité · 30&nbsp;s</a>
+</div>
+
+</body>
+</html>
